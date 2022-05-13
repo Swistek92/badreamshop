@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/badreamshop/static/css/main.627fd194.css",
+    "main.js": "/badreamshop/static/js/main.7d931b37.js",
+    "index.html": "/badreamshop/index.html",
+    "main.627fd194.css.map": "/badreamshop/static/css/main.627fd194.css.map",
+    "main.7d931b37.js.map": "/badreamshop/static/js/main.7d931b37.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.627fd194.css",
+    "static/js/main.7d931b37.js"
+  ]
+}
