@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Header = () => {
   let navigate = useNavigate();
   return (
-    <nav className='navbar navbar-expand-lg navbar-light '>
+    <nav className='navbar navbar-expand-lg navbar-light sticky-top '>
       <div className='container-fluid'>
         <a
           className='navbar-brand'
