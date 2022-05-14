@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/badreamshop/static/css/main.e2433e59.css",
-    "main.js": "/badreamshop/static/js/main.7fa9326d.js",
+    "main.css": "/badreamshop/static/css/main.ea24eb1e.css",
+    "main.js": "/badreamshop/static/js/main.de66aad2.js",
     "index.html": "/badreamshop/index.html",
-    "main.e2433e59.css.map": "/badreamshop/static/css/main.e2433e59.css.map",
-    "main.7fa9326d.js.map": "/badreamshop/static/js/main.7fa9326d.js.map"
+    "main.ea24eb1e.css.map": "/badreamshop/static/css/main.ea24eb1e.css.map",
+    "main.de66aad2.js.map": "/badreamshop/static/js/main.de66aad2.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2433e59.css",
-    "static/js/main.7fa9326d.js"
+    "static/css/main.ea24eb1e.css",
+    "static/js/main.de66aad2.js"
   ]
 }
