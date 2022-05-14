@@ -3,7 +3,13 @@ import Card from '../Card/Card';
 import data from '../Data/Data';
 
 const Search = (word: string, category: string) => {
-  const validCard: { title: string; describe: string; img: string }[] = [];
+  const validCard: {
+    title: string;
+    describe: string;
+    img: string;
+    id: number;
+    category: string;
+  }[] = [];
 
   console.log(category);
 
@@ -22,7 +28,13 @@ const Search = (word: string, category: string) => {
   return validCard.map((card) => {
     return (
       <div className='col-xxl-3 col-xl-4 col-md-6 mt-2 pb-3 pt-3 '>
-        <Card title={card.title} describe={card.describe} img={card.img} />
+        <Card
+          id={card.id}
+          category={card.category}
+          title={card.title}
+          describe={card.describe}
+          img={card.img}
+        />
       </div>
     );
   });

@@ -10,11 +10,12 @@ const Home = () => {
   const [category, setCategory] = useState('all');
   return (
     <div>
-      <div className='container'>
+      <div className='container searcher '>
         <div className='btn-group' role='group'>
           <button
             onClick={() => {
               setCategory('all');
+              setInput('');
             }}
             type='button'
             className='btn btn-primary'
@@ -27,7 +28,7 @@ const Home = () => {
               setCategory('steroids');
             }}
             type='button'
-            className='btn btn-primary'
+            className='btn btn-primary '
           >
             steroids
           </button>
@@ -36,7 +37,7 @@ const Home = () => {
               setCategory('sweet');
             }}
             type='button'
-            className='btn btn-primary'
+            className='btn btn-primary  margin-left'
           >
             sweet
           </button>
@@ -54,6 +55,7 @@ const Home = () => {
           </form>
         )}
       </div>
+
       <div className='container content'>
         <div className='row'>{Search(input, category)}</div>
       </div>

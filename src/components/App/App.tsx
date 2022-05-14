@@ -7,6 +7,7 @@ import Header from '../header/Header';
 import Home from '../Home/Home';
 import About from '../About/About';
 import Profile from '../Profile/Profile';
+import Product from '../Product/Product';
 import ErrorPage from '../ErrorPage/ErrorPage';
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/product/:id' element={<Product />} />
         <Route path='/badreamshop/' element={<Home />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
