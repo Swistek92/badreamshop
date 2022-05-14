@@ -50,39 +50,27 @@ const Home = () => {
       }
     });
 
-    if (input.length < 3) {
-      return cards.map((card) => {
-        return (
-          <div className='col-xxl-3 col-xl-4 col-md-6 mt-2 pb-3 pt-3 '>
-            <Card
-              title={card.title}
-              description={card.describe}
-              img={card.img}
-            />
-          </div>
-        );
-      });
-    } else {
-      return validCard.map((card) => {
-        return (
-          <div className='col-xxl-3 col-xl-4 col-md-6 mt-2 pb-3 pt-3 '>
-            <Card
-              title={card.title}
-              description={card.describe}
-              img={card.img}
-            />
-          </div>
-        );
-      });
-    }
+    return validCard.map((card) => {
+      return (
+        <div className='col-xxl-3 col-xl-4 col-md-6 mt-2 pb-3 pt-3 '>
+          <Card title={card.title} description={card.describe} img={card.img} />
+        </div>
+      );
+    });
   };
 
   return (
     <div>
-      <div>
+      <div className='container'>
         <form>
           <label>Looking for product</label>
-          <input onChange={(e) => setInput(e.target.value.toLowerCase())} />
+          <input
+            className='form-control form-control-lg'
+            type='text'
+            placeholder='Looking for product'
+            aria-label='.form-control-lg example'
+            onChange={(e) => setInput(e.target.value.toLowerCase())}
+          />
         </form>
       </div>
       <div className='container '>
