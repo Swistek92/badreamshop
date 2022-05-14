@@ -2,10 +2,18 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from 'react';
 import './Header.scss';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, matchRoutes } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 const Header = () => {
   let navigate = useNavigate();
+
+  const location = useLocation();
+
+  const isHomePage =
+    location.pathname === '/' || location.pathname === '/badreamshop/';
+  // checked work correctly
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light sticky-top '>
       <div className='container-fluid'>
