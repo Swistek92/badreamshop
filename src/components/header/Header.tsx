@@ -62,7 +62,7 @@ const Header = () => {
               </a>
             </li>
           </ul>
-          <form className='d-flex'>
+          {/* <form className='d-flex'>
             <input
               className='form-control me-2'
               type='search'
@@ -72,7 +72,7 @@ const Header = () => {
             <button className='btn btn-danger' type='submit'>
               Search
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </nav>
