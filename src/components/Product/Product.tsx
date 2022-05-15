@@ -2,10 +2,23 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import data from '../Data/Data';
 
-const Product = () => {
+interface products {
+  id: number;
+  price: number;
+  title: string;
+  describe: string;
+  img: string;
+  category: string;
+}
+
+const Product = (props: any) => {
+  const { products } = data;
+  const { onAdd } = props;
+
   let { id } = useParams();
   let navigate = useNavigate();
-  const item = data.filter((obj) => obj.id === Number(id));
+
+  const item: products[] = products.filter((obj: any) => obj.id === Number(id));
 
   return (
     <div>
@@ -21,6 +34,15 @@ const Product = () => {
       <p> produkt title {item[0].describe}</p>
       <p> produkt category {item[0].category}</p>
       <img src={item[0].img} alt='product imaaage' />
+      <button
+        className='btn btn-primary btn-card'
+        onClick={() => {
+          onAdd(item[0]);
+        }}
+      >
+        {' '}
+        Add to Basket
+      </button>
     </div>
   );
 };

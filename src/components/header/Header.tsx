@@ -51,6 +51,17 @@ const Header = () => {
             </li>
             <li className='nav-item'>
               <a
+                className='nav-link active'
+                aria-current='page'
+                onClick={() => {
+                  navigate('/basket');
+                }}
+              >
+                Basket
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a
                 className='nav-link'
                 onClick={() => {
                   navigate('/about');

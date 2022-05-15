@@ -1,8 +1,13 @@
+import { type } from 'os';
 import React from 'react';
 import Card from '../Card/Card';
-import data from '../Data/Data';
 
-const Search = (word: string, category: string) => {
+const Search = (
+  word: string,
+  category: string,
+  onAdd: Function,
+  products: any
+) => {
   const validCard: {
     title: string;
     describe: string;
@@ -11,15 +16,13 @@ const Search = (word: string, category: string) => {
     category: string;
   }[] = [];
 
-  console.log(category);
-
-  data.forEach((card) => {
+  products.forEach((card: any) => {
     if (category === 'all') {
       if (JSON.stringify(card).toLowerCase().includes(word)) {
         validCard.push(card);
       }
     } else {
-      if (card.category.toLowerCase().includes(category)) {
+      if (card.category.toLowerCase().includes(category.toLowerCase())) {
         validCard.push(card);
       }
     }
@@ -34,6 +37,8 @@ const Search = (word: string, category: string) => {
           title={card.title}
           describe={card.describe}
           img={card.img}
+          onAdd={onAdd}
+          products={products}
         />
       </div>
     );

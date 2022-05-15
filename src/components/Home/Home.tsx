@@ -5,7 +5,9 @@ import { faker } from '@faker-js/faker';
 import { useState } from 'react';
 import Search from '../Searcher/Search';
 
-const Home = () => {
+const Home = (props: any) => {
+  const { onAdd, products } = props;
+
   const [input, setInput] = useState('');
   const [category, setCategory] = useState('all');
   return (
@@ -57,7 +59,7 @@ const Home = () => {
       </div>
 
       <div className='container content'>
-        <div className='row'>{Search(input, category)}</div>
+        <div className='row'>{Search(input, category, onAdd, products)}</div>
       </div>
     </div>
   );
