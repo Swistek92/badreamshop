@@ -4,16 +4,28 @@ import './Card.scss';
 import { useNavigate } from 'react-router-dom';
 
 const Card = (props: any) => {
-  const { onAdd, img, title, describe, id, products } = props;
+  const { onAdd, img, title, id, products, cartItems } = props;
+  let isInBasket = false;
 
-  let navigate = useNavigate();
+  cartItems.forEach((element: any) => {
+    if (element.id === products[id - 1].id) {
+      isInBasket = true;
+    }
+  });
+
+  const navigate = useNavigate();
 
   return (
-    <div className='card'>
+    <div className={`card ${isInBasket && 'isInBasket'}`}>
       <img className='card-img-top' src={img} alt='img food card ' />
       <div className='card-body'>
-        <h5 className='card-title'>{title}</h5>
-        <p className='card-text'>{describe}</p>
+        {isInBasket && <h4>in basket!</h4>}
+        <h5 className='card-title'>
+          {products[id - 1].name} Price: {products[id - 1].price} $
+        </h5>
+
+        <p className='card-title'>{title}</p>
+
         <a
           onClick={() => {
             navigate(`/product/${id}`);
@@ -23,12 +35,11 @@ const Card = (props: any) => {
           check it!
         </a>
         <a
-          className='btn btn-primary btn-card'
+          className='btn btn-primary btn-card margin-left'
           onClick={() => {
             onAdd(products[id - 1]);
           }}
         >
-          {' '}
           Add to Basket
         </a>
       </div>

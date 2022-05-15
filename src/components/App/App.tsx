@@ -48,10 +48,17 @@ const App: FC = () => {
     <Router>
       <Header />
       <Routes>
-        <Route path='/' element={<Home products={products} onAdd={onAdd} />} />
+        <Route
+          path='/'
+          element={
+            <Home cartItems={cartItems} products={products} onAdd={onAdd} />
+          }
+        />
         <Route
           path='/badreamshop/'
-          element={<Home products={products} onAdd={onAdd} />}
+          element={
+            <Home cartItems={cartItems} products={products} onAdd={onAdd} />
+          }
         />
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />

@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Search from '../Searcher/Search';
 
 const Home = (props: any) => {
-  const { onAdd, products } = props;
+  const { onAdd, products, cartItems } = props;
 
   const [input, setInput] = useState('');
   const [category, setCategory] = useState('all');
@@ -59,7 +59,9 @@ const Home = (props: any) => {
       </div>
 
       <div className='container content'>
-        <div className='row'>{Search(input, category, onAdd, products)}</div>
+        <div className='row'>
+          {Search(input, category, onAdd, products, cartItems)}
+        </div>
       </div>
     </div>
   );

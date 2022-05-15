@@ -6,7 +6,8 @@ const Search = (
   word: string,
   category: string,
   onAdd: Function,
-  products: any
+  products: any,
+  cartItems: any
 ) => {
   const validCard: {
     title: string;
@@ -39,6 +40,7 @@ const Search = (
           img={card.img}
           onAdd={onAdd}
           products={products}
+          cartItems={cartItems}
         />
       </div>
     );

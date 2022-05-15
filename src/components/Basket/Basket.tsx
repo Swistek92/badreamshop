@@ -5,8 +5,6 @@ const Basket = (props: any) => {
   const { cartItem, onAdd, onRemove } = props;
 
   const filtered = cartItem.filter((obj: any) => obj.qty !== 0);
-  console.log('cart items', cartItem);
-  console.log('filtered', filtered);
 
   const financial = (x: any) => {
     return Number(parseFloat(x).toFixed(2));
@@ -21,9 +19,13 @@ const Basket = (props: any) => {
 
   return (
     <div className='container'>
-      <h2>Cart Items</h2>
+      {filtered.length !== 0 && <h2>Cart Items</h2>}
       <div>
-        {cartItem.length === 0 && <div>Cart is empty</div>}
+        {filtered.length === 0 && (
+          <div>
+            <h1>Cart is empty</h1>
+          </div>
+        )}
         {filtered.map((item: any) => (
           <div key={item.id} className='row'>
             <div className='col-2'> {item.name}</div>

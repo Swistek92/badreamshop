@@ -2,7 +2,7 @@ const data = {
   products: [
     {
       id: 1,
-      name: 'baton',
+      name: 'Baton',
       price: 5.42,
       title:
         'KETO Baton Coco Bar 40g z nerkowcami - na dietę keto, smaczna przekąska',
@@ -13,7 +13,7 @@ const data = {
     },
     {
       id: 2,
-      name: 'galaretka',
+      name: 'Galaretka',
       price: 4.49,
       title: 'Galaretka blok naturalne AGAR Stans PRL 1kg',
       describe:
@@ -23,7 +23,7 @@ const data = {
     },
     {
       id: 3,
-      name: 'czekoladki',
+      name: 'Czekoladki',
       price: 15.0,
       title: 'Toffifee Coconut Czekoladki Kokosowe 125 g',
       describe:
@@ -43,7 +43,7 @@ const data = {
     },
     {
       id: 5,
-      name: 'bialko',
+      name: 'Bialko',
       price: 229.0,
       title: 'HIRO.LAB Instant Whey Protein - 2000g',
       describe:
