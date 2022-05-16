@@ -20,7 +20,7 @@ const Home = (props: any) => {
               setInput('');
             }}
             type='button'
-            className='btn btn-primary'
+            className='btn btn-search'
           >
             Search by name!
           </button>
@@ -30,7 +30,7 @@ const Home = (props: any) => {
               setCategory('steroids');
             }}
             type='button'
-            className='btn btn-primary '
+            className='btn btn-search '
           >
             steroids
           </button>
@@ -39,7 +39,7 @@ const Home = (props: any) => {
               setCategory('sweet');
             }}
             type='button'
-            className='btn btn-primary  margin-left'
+            className='btn btn-search  margin-left'
           >
             sweet
           </button>

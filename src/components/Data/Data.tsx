@@ -7,7 +7,7 @@ const data = {
       title: 'KETO Coco Bar 40g with cashews - for the keto diet, tasty snack',
       describe:
         'Keto Coco Bar is a specially designed snack, a meal replacement in the form of a delicious bar.',
-      img: 'http://www.amix-nutrition.com/uploads/fs_images/keto-coco-bar-dark-choco-almond_20x40g_2365_l.jpg',
+      img: 'https://image.ceneostatic.pl/data/products/72405131/i-biotech-zero-bar-baton-proteinowy-czekolada-kokos-50g.jpg',
       category: 'sweet',
     },
     {
