@@ -3,9 +3,11 @@ import Card from '../Card/Card';
 import { faker } from '@faker-js/faker';
 
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Search from '../Searcher/Search';
 
 const Home = (props: any) => {
+  const navigate = useNavigate();
   const { onAdd, products, cartItems } = props;
 
   const [input, setInput] = useState('');
@@ -57,6 +59,18 @@ const Home = (props: any) => {
           </form>
         )}
       </div>
+      {cartItems.length > 1 && (
+        <div className='container'>
+          <button
+            className='butonBasket '
+            onClick={() => {
+              navigate(`/basket/`);
+            }}
+          >
+            Go to Basket
+          </button>
+        </div>
+      )}
 
       <div className='container content'>
         <div className='row'>

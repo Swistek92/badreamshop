@@ -26,22 +26,33 @@ const Card = (props: any) => {
 
         <p className='card-title'>{title}</p>
 
-        <a
+        <button
           onClick={() => {
             navigate(`/product/${id}`);
           }}
-          className='btn btn-primary btn-card'
+          className='butonBasket'
         >
           check it!
-        </a>
-        <a
-          className='btn btn-primary btn-card margin-left'
-          onClick={() => {
-            onAdd(products[id - 1]);
-          }}
-        >
-          Add to Basket
-        </a>
+        </button>
+        {!isInBasket ? (
+          <button
+            className='butonBasket'
+            onClick={() => {
+              onAdd(products[id - 1]);
+            }}
+          >
+            Add to Basket
+          </button>
+        ) : (
+          <button
+            className='butonBasket '
+            onClick={() => {
+              navigate(`/basket/`);
+            }}
+          >
+            Go to Basket
+          </button>
+        )}
       </div>
     </div>
   );

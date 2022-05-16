@@ -73,7 +73,12 @@ const App: FC = () => {
             />
           }
         />
-        <Route path='/product/:id' element={<Product onAdd={onAdd} />} />
+        <Route
+          path='/product/:id'
+          element={
+            <Product onAdd={onAdd} products={products} cartItems={cartItems} />
+          }
+        />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
     </Router>

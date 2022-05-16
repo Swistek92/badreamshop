@@ -12,3 +12,14 @@
 .margin-left {
   margin-left: 10px !important;
 }
+
+.butonBasket {
+  min-width: 100%;
+  background-color: $color-red;
+  min-height: 50px;
+  font-weight: 900;
+}
+
+.butonBasket:hover {
+  background-color: $color-blue;
+}

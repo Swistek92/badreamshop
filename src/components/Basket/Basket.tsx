@@ -1,9 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import './Baseket.scss';
+import { useNavigate } from 'react-router-dom';
 
 const Basket = (props: any) => {
   const { cartItem, onAdd, onRemove } = props;
 
+  const navigate = useNavigate();
   const filtered = cartItem.filter((obj: any) => obj.qty !== 0);
 
   const financial = (x: any) => {
@@ -14,12 +17,20 @@ const Basket = (props: any) => {
     filtered.reduce((a: any, c: any) => a + c.qty * c.price, 0)
   );
   const taxPrice = financial(itemsPrice * 0.14);
-  const shippingPrice = itemsPrice > 2000 ? 0 : 20;
+  const shippingPrice = itemsPrice > 200 ? 0 : 20;
   const totalPrice = financial(itemsPrice + taxPrice + shippingPrice);
 
   return (
     <div className='container'>
-      {filtered.length !== 0 && <h2>Cart Items</h2>}
+      <button
+        className='butonBasket '
+        onClick={() => {
+          navigate(`/`);
+        }}
+      >
+        Go back!
+      </button>
+      {filtered.length !== 0 && <h2>Twoje przedmioty</h2>}
       <div>
         {filtered.length === 0 && (
           <div>
@@ -27,48 +38,46 @@ const Basket = (props: any) => {
           </div>
         )}
         {filtered.map((item: any) => (
-          <div key={item.id} className='row'>
-            <div className='col-2'> {item.name}</div>
-            <h1 className='col-2'>
+          <div key={item.id}>
+            <h3>
+              <a
+                onClick={() => {
+                  navigate(`/product/${item.id}`);
+                }}
+              >
+                {' '}
+                {item.name}{' '}
+              </a>
               <button onClick={() => onRemove(item)} className='btn btn-danger'>
                 -
               </button>
-
               <button onClick={() => onAdd(item)} className='btn btn-primary'>
                 +
               </button>
-            </h1>
-
-            <div className='col-2 text-right'>
-              {item.qty} x ${item.price}
-            </div>
+              SZTUK {item.qty} x ${item.price}
+            </h3>
           </div>
         ))}
 
         {filtered.length !== 0 && (
           <>
-            <hr></hr>
-            <div className='row'>
-              <div className='col-2'>Items Price</div>
-              <div className='col-1 text-right'>${itemsPrice}</div>
-            </div>
-            <div className='row'>
-              <div className='col-2'>Tax Price</div>
-              <div className='col-1 text-right'>${taxPrice}</div>
-            </div>
-            <div className='row'>
-              <div className='col-2'>Shipping Price</div>
-              <div className='col-1 text-right'>${shippingPrice}</div>
+            <hr />
+            <h5>Powyżej 200$ darmowa wysyłka!</h5>
+
+            <p>Cena towarów: ${itemsPrice}</p>
+
+            <p>podatki $ {taxPrice}</p>
+
+            <p>wysyłka $ {shippingPrice}</p>
+
+            <p>
+              <strong>Cena całkowita ${totalPrice}</strong>
+            </p>
+
+            <div className='col-1 text-right'>
+              <strong></strong>
             </div>
 
-            <div className='row'>
-              <div className='col-2'>
-                <strong>Total Price</strong>
-              </div>
-              <div className='col-1 text-right'>
-                <strong>${totalPrice}</strong>
-              </div>
-            </div>
             <hr />
             <div className='row'>
               <button onClick={() => alert('Implement Checkout!')}>
