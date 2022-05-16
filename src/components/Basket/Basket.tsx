@@ -54,7 +54,7 @@ const Basket = (props: any) => {
               <button onClick={() => onAdd(item)} className='btn btn-primary'>
                 +
               </button>
-              SZTUK {item.qty} x ${item.price}
+              PIECES {item.qty} x ${item.price}
             </h3>
           </div>
         ))}
@@ -62,16 +62,16 @@ const Basket = (props: any) => {
         {filtered.length !== 0 && (
           <>
             <hr />
-            <h5>Powyżej 200$ darmowa wysyłka!</h5>
+            <h5>Above $ 200 Free Shipping!</h5>
 
-            <p>Cena towarów: ${itemsPrice}</p>
+            <p>Price of the items: ${itemsPrice}</p>
 
-            <p>podatki $ {taxPrice}</p>
+            <p>Taxs $ {taxPrice}</p>
 
-            <p>wysyłka $ {shippingPrice}</p>
+            <p>Shipping $ {shippingPrice}</p>
 
             <p>
-              <strong>Cena całkowita ${totalPrice}</strong>
+              <strong>Total price ${totalPrice}</strong>
             </p>
 
             <div className='col-1 text-right'>

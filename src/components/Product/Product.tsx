@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import data from '../Data/Data';
 
 interface products {
   id: number;
@@ -25,7 +24,6 @@ const Product = (props: any) => {
       isInBasket = true;
     }
   });
-  console.log(isInBasket);
 
   return (
     <div className='container'>
@@ -35,7 +33,7 @@ const Product = (props: any) => {
           navigate('/');
         }}
       >
-        Wróc do strony głównej
+        Back to Home page
       </button>
       <button
         className='butonBasket '
@@ -43,12 +41,12 @@ const Product = (props: any) => {
           navigate(`/basket/`);
         }}
       >
-        Idz do koszyka
+        Go cart!
       </button>
-      {isInBasket && <h2>Produkt jest w koszyku!</h2>}
+      {isInBasket && <h2>The product is in the cart!</h2>}
       <h5> {item[0].title}</h5>
       <p> {item[0].describe}</p>
-      <p> Kategoria {item[0].category}</p>
+      <p> Category: {item[0].category}</p>
       {!isInBasket && (
         <button
           className='butonBasket'
@@ -56,7 +54,7 @@ const Product = (props: any) => {
             onAdd(item[0]);
           }}
         >
-          Dodaj do koszyka
+          Add to cart!
         </button>
       )}
       <img src={item[0].img} className='img-fluid' alt='product imaaage' />

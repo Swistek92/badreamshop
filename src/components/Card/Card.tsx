@@ -17,43 +17,41 @@ const Card = (props: any) => {
 
   return (
     <div className={`card ${isInBasket && 'isInBasket'}`}>
-      <img className='card-img-top' src={img} alt='img food card ' />
-      <div className='card-body'>
-        {isInBasket && <h4>in basket!</h4>}
-        <h5 className='card-title'>
-          {products[id - 1].name} Price: {products[id - 1].price} $
-        </h5>
+      <a
+        className='card-link'
+        onClick={() => {
+          navigate(`/product/${id}`);
+        }}
+      >
+        <img className='card-img-top' src={img} alt='img food card ' />
+        <div className='card-body'>
+          {isInBasket && <h4>in Cart!</h4>}
+          <h5 className='card-title'>
+            {products[id - 1].name} Price: {products[id - 1].price} $
+          </h5>
 
-        <p className='card-title'>{title}</p>
+          <p className='card-title'>{title}</p>
 
-        <button
-          onClick={() => {
-            navigate(`/product/${id}`);
-          }}
-          className='butonBasket'
-        >
-          check it!
-        </button>
-        {!isInBasket ? (
           <button
+            onClick={() => {
+              navigate(`/product/${id}`);
+            }}
             className='butonBasket'
-            onClick={() => {
-              onAdd(products[id - 1]);
-            }}
           >
-            Add to Basket
+            check it!
           </button>
-        ) : (
-          <button
-            className='butonBasket '
-            onClick={() => {
-              navigate(`/basket/`);
-            }}
-          >
-            Go to Basket
-          </button>
-        )}
-      </div>
+        </div>
+      </a>
+      {!isInBasket && (
+        <button
+          className='butonBasket'
+          onClick={() => {
+            onAdd(products[id - 1]);
+          }}
+        >
+          Add to Cart
+        </button>
+      )}
     </div>
   );
 };
