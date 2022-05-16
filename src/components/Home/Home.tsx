@@ -1,6 +1,4 @@
 import './Home.scss';
-import Card from '../Card/Card';
-import { faker } from '@faker-js/faker';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -67,7 +65,7 @@ const Home = (props: any) => {
               navigate(`/basket/`);
             }}
           >
-            Go to Basket
+            Go to Cart
           </button>
         </div>
       )}
