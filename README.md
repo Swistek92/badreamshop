@@ -2,7 +2,7 @@ Project is a simple website of the store,
 it contains components such as a shopping cart,
 a search engine (by name and category),
 a list of items,
-created using javascript react reactrouter bootstrap scss
+created using javascript/typescript react reactrouter bootstrap scss
 
 
 
